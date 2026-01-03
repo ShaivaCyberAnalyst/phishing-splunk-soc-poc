@@ -61,3 +61,25 @@ index=wineventlog EventCode=4688
 Identify Execution Policy Bypass
 index=powershell EventCode=4104
 | search ScriptBlockText="*ExecutionPolicy Bypass*"
+
+
+
+
+---
+
+## Payload Analysis
+
+During the investigation, encoded PowerShell commands were extracted and analyzed to validate malicious intent.
+
+### Steps Performed
+
+- Identified Base64-encoded payload from PowerShell Script Block Logging (Event ID 4104)
+- Extracted the `EncodedCommand` value from Splunk logs
+- Decoded the payload using PowerShell on the endpoint
+- Reviewed decoded content for suspicious behavior
+
+### Decoding Command Used
+
+```powershell
+$enc="<Base64_String>"
+[System.Text.Encoding]::Unicode.GetString([System.Convert]::FromBase64String($enc))
