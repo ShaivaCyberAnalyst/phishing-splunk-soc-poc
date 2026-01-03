@@ -43,5 +43,6 @@ A phishing email was delivered to a user, leading to suspicious PowerShell execu
 ```spl
 index=powershell EventCode=4104
 | search ScriptBlockText="*EncodedCommand*"
+
 index=wineventlog EventCode=4688
 | search NewProcessName="*powershell.exe*"
