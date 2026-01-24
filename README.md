@@ -1,13 +1,13 @@
 # Phishing Attack Detection & Incident Investigation (SOC Lab)
 
-## 📌 Overview
+##  Overview
 This project demonstrates an end-to-end **phishing attack simulation and SOC investigation** performed in a controlled lab environment using **Splunk SIEM**.
 
 A phishing email was delivered to a user, leading to **encoded PowerShell execution** on a Windows endpoint. The activity was **detected, investigated, and analyzed** using SPL queries, replicating a **real-world SOC L1 workflow**.
 
 ---
 
-## 🎯 Objectives
+##  Objectives
 - Simulate a real phishing attack scenario
 - Detect malicious PowerShell execution
 - Perform SOC-style alert triage and investigation
@@ -16,7 +16,7 @@ A phishing email was delivered to a user, leading to **encoded PowerShell execut
 
 ---
 
-## 🛠 Tools & Technologies
+##  Tools & Technologies
 - **GoPhish** – Phishing campaign simulation  
 - **MailHog** – SMTP mail capture  
 - **Windows 10** – Victim endpoint  
@@ -26,7 +26,7 @@ A phishing email was delivered to a user, leading to **encoded PowerShell execut
 
 ---
 
-## 🧪 Attack Scenario
+##  Attack Scenario
 1. Phishing email sent using GoPhish
 2. Email delivered via MailHog SMTP server
 3. User clicks the phishing link
@@ -37,9 +37,9 @@ A phishing email was delivered to a user, leading to **encoded PowerShell execut
 
 ---
 
-## 🚨 Detection & Investigation
+##  Detection & Investigation
 
-### 🔍 Indicators Observed
+###  Indicators Observed
 - PowerShell executed with **EncodedCommand**
 - Use of **ExecutionPolicy Bypass**
 - Script execution using **IEX**
@@ -47,7 +47,7 @@ A phishing email was delivered to a user, leading to **encoded PowerShell execut
 
 ---
 
-## 🔎 SPL Queries Used
+##  SPL Queries Used
 
 ### Detect Encoded PowerShell Execution
 ```spl
@@ -89,7 +89,7 @@ Flags dynamic execution of malicious scripts often used in fileless attacks.
 
 ---
 
-## 🚀 Payload Analysis
+##  Payload Analysis
 
 During the investigation, Base64-encoded PowerShell commands were extracted from Script Block Logging to validate malicious intent.
 
@@ -110,7 +110,7 @@ $enc="<Base64_String>"
 
 ---
 
-## 🧠 Analysis Outcome
+##  Analysis Outcome
 
 - Obfuscated PowerShell execution confirmed
 - Behavior consistent with phishing-based initial access
@@ -118,7 +118,7 @@ $enc="<Base64_String>"
 
 ---
 
-## 🎯 MITRE ATT&CK Mapping
+##  MITRE ATT&CK Mapping
 
 | Technique ID | Technique Name |
 |-------------|----------------|
@@ -127,7 +127,7 @@ $enc="<Base64_String>"
 
 ---
 
-## 📄 Incident Summary (SOC View)
+##  Incident Summary (SOC View)
 
 - **Initial Vector:** Phishing Email  
 - **Execution Method:** Encoded PowerShell Command  
